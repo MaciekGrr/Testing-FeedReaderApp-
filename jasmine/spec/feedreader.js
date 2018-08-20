@@ -22,14 +22,14 @@ $(function() {
         it('have defined, not empty url', function() {  
         for (const feed of allFeeds) {        
             expect(feed.url).toBeDefined();
-            expect(feed.url).not.toBe(0);
+            expect(feed.url.length).not.toBe(0); // added length attribiute :)
             };
         });
 
         it('have defined, not empty name property', function() {
             for (const feed of allFeeds) {
             expect(feed.name).toBeDefined();
-            expect(feed.name).not.toBe(0);
+            expect(feed.name.length).not.toBe(0);
             }
         });
 
@@ -70,7 +70,7 @@ $(function() {
         });
 
         it('when the loadFeed function is called and completed, there is at least single .entry inside .feed container', function(){
-            expect($('.feed .entry')).not.toBe(0); // we have to check if .entry, the .child of .feed has a value
+            expect($('.feed .entry').length).not.toBe(0); // we have to check if .entry, the .child of .feed has a value
             console.log($('.feed .entry'));
         });
 
